@@ -32,7 +32,7 @@ end
     rating: Faker::Number.between(1, 10),
     feedback: Faker::Hipster.paragraph,
     recommend: Faker::Boolean.boolean, #=> true
-    organization_id: rand(1..15),
+    organization_id: rand(1..5),
     user_id: rand(1..15)
     )
 end
