@@ -1,0 +1,738 @@
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying(50), "service_era" character varying(50), "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" serial primary key, "creator_id" integer, "name" character varying(100) NOT NULL, "description" text NOT NULL, "era_served" character varying NOT NULL, "category" character varying NOT NULL, "avg_rating" float NOT NULL, "url" character varying NOT NULL, "address1" character varying NOT NULL, "address2" character varying, "city" character varying NOT NULL, "state" character varying NOT NULL, "zipcode" integer NOT NULL, "phone" integer, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer, "rating" integer NOT NULL, "feedback" text NOT NULL, "recommend" boolean NOT NULL, "organization_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (4.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401215245"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-02 01:03:20 UTC], ["updated_at", 2017-04-02 01:03:20 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (14.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jovani Kshlerin"], ["service_era", "Uranus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:11:45 UTC], ["updated_at", 2017-04-02 01:11:45 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jannie Emmerich"], ["service_era", "Neptune"], ["status", "Ewok"], ["created_at", 2017-04-02 01:11:45 UTC], ["updated_at", 2017-04-02 01:11:45 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jose Reichel"], ["service_era", "Jupiter"], ["status", "Gungan"], ["created_at", 2017-04-02 01:11:45 UTC], ["updated_at", 2017-04-02 01:11:45 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Devan Murazik"], ["service_era", "Jupiter"], ["status", "Ewok"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brayan Klein"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aylin Rodriguez"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Filomena Gislason"], ["service_era", "Saturn"], ["status", "Hutt"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Queenie Stoltenberg"], ["service_era", "Venus"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sister O'Reilly"], ["service_era", "Jupiter"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Deron Yost DVM"], ["service_era", "Earth"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Leora Upton I"], ["service_era", "Earth"], ["status", "Gungan"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Amely Cronin IV"], ["service_era", "Mercury"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fanny Johnston"], ["service_era", "Saturn"], ["status", "Hutt"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Flo Koepp"], ["service_era", "Mercury"], ["status", "Gungan"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Maritza Lebsack"], ["service_era", "Uranus"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:11:46 UTC], ["updated_at", 2017-04-02 01:11:46 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brando Prosacco"], ["service_era", "Earth"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Berta Williamson"], ["service_era", "Earth"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Josefina Cole IV"], ["service_era", "Venus"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Korey Wehner"], ["service_era", "Uranus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aimee Lakin"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alec Romaguera"], ["service_era", "Neptune"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Friedrich Yost Jr."], ["service_era", "Neptune"], ["status", "Ewok"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Garnett Altenwerth III"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Elvera Paucek"], ["service_era", "Mercury"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hilda Streich"], ["service_era", "Earth"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Loyce Batz"], ["service_era", "Mercury"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Carley Schmeler"], ["service_era", "Earth"], ["status", "Ewok"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Keon Zemlak MD"], ["service_era", "Saturn"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Giles Kling"], ["service_era", "Jupiter"], ["status", "Hutt"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Guillermo Feeney"], ["service_era", "Jupiter"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:12:39 UTC], ["updated_at", 2017-04-02 01:12:39 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Loraine Adams"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:13:25 UTC], ["updated_at", 2017-04-02 01:13:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Jillian Hackett"], ["service_era", "Earth"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:25 UTC], ["updated_at", 2017-04-02 01:13:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Darius Stehr V"], ["service_era", "Mercury"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:25 UTC], ["updated_at", 2017-04-02 01:13:25 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rhiannon Roob"], ["service_era", "Neptune"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:25 UTC], ["updated_at", 2017-04-02 01:13:25 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jamie Crist"], ["service_era", "Mercury"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Jeromy Hermann"], ["service_era", "Uranus"], ["status", "Gungan"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Gayle Gutmann"], ["service_era", "Earth"], ["status", "Ewok"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Delia Ankunding"], ["service_era", "Uranus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Brandy Kassulke"], ["service_era", "Neptune"], ["status", "Gungan"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Nedra Quigley"], ["service_era", "Jupiter"], ["status", "Hutt"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Peyton Russel III"], ["service_era", "Mercury"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Waylon Hammes"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Bert Kiehn"], ["service_era", "Neptune"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Brian Satterfield"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Juwan Ratke"], ["service_era", "Earth"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:13:26 UTC], ["updated_at", 2017-04-02 01:13:26 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Darius Rath"], ["service_era", "Mars"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Idell Kassulke"], ["service_era", "Mars"], ["status", "Ewok"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeromy Bartell"], ["service_era", "Mars"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Malvina Pouros DDS"], ["service_era", "Venus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Brandon Jast"], ["service_era", "Earth"], ["status", "Hutt"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Effie Dooley"], ["service_era", "Earth"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Joy Zieme"], ["service_era", "Neptune"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Malika Frami"], ["service_era", "Saturn"], ["status", "Hutt"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alexandro McCullough DDS"], ["service_era", "Saturn"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sunny Effertz"], ["service_era", "Venus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kolby Rau"], ["service_era", "Earth"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Treva Vandervort"], ["service_era", "Uranus"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dasia Lakin"], ["service_era", "Uranus"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Armand Miller"], ["service_era", "Saturn"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lorenz Legros"], ["service_era", "Neptune"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:13:47 UTC], ["updated_at", 2017-04-02 01:13:47 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Casey Ankunding"], ["service_era", "Venus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Michelle Russel"], ["service_era", "Saturn"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Olin Kemmer"], ["service_era", "Mars"], ["status", "Ewok"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sincere Cole"], ["service_era", "Jupiter"], ["status", "Ewok"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Lura Cassin"], ["service_era", "Venus"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rickie Windler DVM"], ["service_era", "Jupiter"], ["status", "Jawa"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Forest Prosacco"], ["service_era", "Jupiter"], ["status", "Jawa"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Electa Heaney V"], ["service_era", "Earth"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bulah Farrell"], ["service_era", "Jupiter"], ["status", "Hutt"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mariela Dietrich"], ["service_era", "Saturn"], ["status", "Hutt"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Blanca Grady"], ["service_era", "Uranus"], ["status", "Hutt"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ofelia Watsica"], ["service_era", "Jupiter"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Reece Welch"], ["service_era", "Mars"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rosetta Fay"], ["service_era", "Jupiter"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Victor Schultz"], ["service_era", "Earth"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:14:10 UTC], ["updated_at", 2017-04-02 01:14:10 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Domenick Maggio"], ["service_era", "Mars"], ["status", "Jawa"], ["created_at", 2017-04-02 01:15:24 UTC], ["updated_at", 2017-04-02 01:15:24 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aleen Lynch"], ["service_era", "Mars"], ["status", "Jawa"], ["created_at", 2017-04-02 01:15:24 UTC], ["updated_at", 2017-04-02 01:15:24 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Gilda Sipes"], ["service_era", "Saturn"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:15:24 UTC], ["updated_at", 2017-04-02 01:15:24 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Tatum Von"], ["service_era", "Mars"], ["status", "Jawa"], ["created_at", 2017-04-02 01:15:24 UTC], ["updated_at", 2017-04-02 01:15:24 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Isidro Keeling"], ["service_era", "Earth"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Bernie Satterfield"], ["service_era", "Mercury"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Reuben Miller"], ["service_era", "Uranus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mr. Sheila Schamberger"], ["service_era", "Saturn"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kayley Streich"], ["service_era", "Saturn"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jamil Keebler"], ["service_era", "Uranus"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Pablo Torp"], ["service_era", "Earth"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jaylin Dicki"], ["service_era", "Mars"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sigmund Skiles"], ["service_era", "Mercury"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Kaelyn Schneider"], ["service_era", "Neptune"], ["status", "Ewok"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rodrigo Johns"], ["service_era", "Uranus"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:15:25 UTC], ["updated_at", 2017-04-02 01:15:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fernando Hermiston"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Joanne Sanford"], ["service_era", "Uranus"], ["status", "Ewok"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Trevor Osinski"], ["service_era", "Saturn"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sage Larson"], ["service_era", "Saturn"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tyreek Hoppe"], ["service_era", "Uranus"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ruth Schroeder PhD"], ["service_era", "Mercury"], ["status", "Hutt"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Catharine Stanton"], ["service_era", "Mercury"], ["status", "Ewok"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sabryna D'Amore"], ["service_era", "Neptune"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Keagan Lowe"], ["service_era", "Neptune"], ["status", "Ewok"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dimitri Hirthe"], ["service_era", "Mercury"], ["status", "Gungan"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Emely Schamberger"], ["service_era", "Uranus"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Turner Klocko"], ["service_era", "Mercury"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Korbin Lockman MD"], ["service_era", "Venus"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tiffany Will"], ["service_era", "Venus"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alana Oberbrunner"], ["service_era", "Saturn"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (7.9ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 15], ["name", "Neimoidian"], ["description", "Mlkshk asymmetrical salvia carry fingerstache. Master yolo stumptown. Normcore goth try-hard loko. Gastropub actually pour-over cred wes anderson goth poutine. Pop-up yolo pinterest 90's meh."], ["era_served", "Earth"], ["category", "Barliman Butterbur"], ["avg_rating", 2.9], ["url", "gibsonwalsh.info"], ["address1", "5236 Nicolette Parks"], ["address2", "Suite 775"], ["city", "Lake Skyebury"], ["state", "Connecticut"], ["zipcode", 99091], ["phone", 953], ["email", "mitchel@ondrickakuvalis.info"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 4], ["name", "Ewok"], ["description", "Aesthetic carry cardigan salvia roof normcore. Shabby chic normcore cardigan single-origin coffee trust fund you probably haven't heard of them. Yuccie tote bag cronut blog salvia pabst. Skateboard intelligentsia banjo helvetica tattooed 8-bit irony."], ["era_served", "Mercury"], ["category", "Samwise Gamgee"], ["avg_rating", 8.3], ["url", "beier.info"], ["address1", "125 Kuhlman Cape"], ["address2", "Apt. 407"], ["city", "Huelsland"], ["state", "Wisconsin"], ["zipcode", 54889], ["phone", 0], ["email", "linnea@lind.co"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 3], ["name", "Wookiee"], ["description", "Umami carry gastropub skateboard blog mixtape. Poutine truffaut xoxo migas banh mi goth intelligentsia. Normcore freegan everyday cray banh mi. Biodiesel try-hard cred godard pop-up."], ["era_served", "Uranus"], ["category", "Glorfindel"], ["avg_rating", 1.8], ["url", "cristbailey.biz"], ["address1", "50945 Glover Underpass"], ["address2", "Apt. 455"], ["city", "Lake Fredaside"], ["state", "Nebraska"], ["zipcode", 92145], ["phone", 697], ["email", "edgardo.crist@baumbach.net"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 8], ["name", "Ithorian"], ["description", "Pinterest meggings farm-to-table portland. Farm-to-table lomo food truck tilde twee umami craft beer pickled. Salvia irony hella mlkshk cornhole humblebrag farm-to-table."], ["era_served", "Mars"], ["category", "Samwise Gamgee"], ["avg_rating", 9.3], ["url", "creminrolfson.info"], ["address1", "71851 Kertzmann Neck"], ["address2", "Apt. 541"], ["city", "East Houstonton"], ["state", "Texas"], ["zipcode", 63886], ["phone", 249], ["email", "faye_rice@dach.biz"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 4], ["name", "Sullustan"], ["description", "Ethical tumblr bushwick cronut schlitz meggings fashion axe keffiyeh. Knausgaard small batch shabby chic. Migas lo-fi art party 3 wolf moon craft beer normcore."], ["era_served", "Saturn"], ["category", "Sauron"], ["avg_rating", 6.0], ["url", "tromp.info"], ["address1", "51602 Estel Stream"], ["address2", "Suite 271"], ["city", "Oberbrunnerfort"], ["state", "Alabama"], ["zipcode", 31530], ["phone", 1], ["email", "keeley@smithamruel.net"], ["created_at", 2017-04-02 01:16:37 UTC], ["updated_at", 2017-04-02 01:16:37 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Modesta Heaney"], ["service_era", "Neptune"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tremaine Braun"], ["service_era", "Uranus"], ["status", "Mon Calamari"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Elliott Stanton"], ["service_era", "Uranus"], ["status", "Ewok"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Kallie Hickle"], ["service_era", "Saturn"], ["status", "Hutt"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Larry Monahan Jr."], ["service_era", "Saturn"], ["status", "Gungan"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rebeca Dickens"], ["service_era", "Earth"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Annalise Berge III"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Myron Hodkiewicz"], ["service_era", "Mars"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chauncey Mills"], ["service_era", "Neptune"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Amy Hammes"], ["service_era", "Jupiter"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alvis Hettinger"], ["service_era", "Earth"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fannie Doyle"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Celine Abernathy"], ["service_era", "Mars"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Kirk Hickle"], ["service_era", "Neptune"], ["status", "Sullustan"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dulce Stamm"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 2], ["name", "Ithorian"], ["description", "Tilde carry semiotics echo hashtag yr hammock. Aesthetic brooklyn keffiyeh. Shabby chic swag tote bag goth tofu thundercats. Poutine dreamcatcher distillery tumblr skateboard bicycle rights kickstarter. Gastropub ennui viral master xoxo venmo."], ["era_served", "Uranus"], ["category", "Denethor"], ["avg_rating", 8.8], ["url", "murazik.co"], ["address1", "117 Sibyl Dam"], ["address2", "Apt. 111"], ["city", "Ramirotown"], ["state", "Wisconsin"], ["zipcode", 11022], ["phone", 740], ["email", "lou@quitzonberge.info"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 13], ["name", "Hutt"], ["description", "Occupy try-hard synth. Synth kickstarter pbr&b food truck yuccie flannel bespoke skateboard. Cleanse flannel semiotics lomo butcher. Mumblecore etsy pork belly leggings microdosing kitsch bushwick."], ["era_served", "Saturn"], ["category", "Grìma Wormtongue"], ["avg_rating", 4.4], ["url", "pagac.net"], ["address1", "662 Hansen Branch"], ["address2", "Suite 511"], ["city", "Mayerchester"], ["state", "Idaho"], ["zipcode", 69195], ["phone", 387], ["email", "chelsie_bosco@kshlerinmurazik.org"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 7], ["name", "Jawa"], ["description", "Put a bird on it seitan fashion axe 3 wolf moon. Drinking tilde deep v pug. Pug occupy diy readymade letterpress trust fund. Listicle beard kickstarter bicycle rights. Pinterest chillwave yuccie meh."], ["era_served", "Earth"], ["category", "Boromir"], ["avg_rating", 0.4], ["url", "gerlach.co"], ["address1", "58919 Reynold Springs"], ["address2", "Apt. 700"], ["city", "Port Aditya"], ["state", "Illinois"], ["zipcode", 71697], ["phone", 1], ["email", "keanu@heidenreich.co"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 15], ["name", "Mon Calamari"], ["description", "Chambray deep v craft beer pop-up kickstarter single-origin coffee direct trade. Polaroid pbr&b park green juice. Wes anderson ennui typewriter ethical narwhal 3 wolf moon. Locavore neutra vhs iphone xoxo vegan etsy. Literally forage venmo mlkshk bushwick franzen irony."], ["era_served", "Neptune"], ["category", "Legolas"], ["avg_rating", 7.6], ["url", "bahringer.info"], ["address1", "73309 Araceli Union"], ["address2", "Apt. 857"], ["city", "Lake Ryleigh"], ["state", "Indiana"], ["zipcode", 85477], ["phone", 0], ["email", "clement@larkinkunde.com"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 9], ["name", "Neimoidian"], ["description", "Put a bird on it neutra pug church-key. Yolo cornhole taxidermy ethical. Art party yolo helvetica post-ironic franzen retro kombucha green juice."], ["era_served", "Jupiter"], ["category", "Peregrin Took"], ["avg_rating", 5.9], ["url", "grady.io"], ["address1", "85580 Elda Burg"], ["address2", "Suite 390"], ["city", "Sengertown"], ["state", "Delaware"], ["zipcode", 83468], ["phone", 1], ["email", "margarita_yost@turner.info"], ["created_at", 2017-04-02 01:17:10 UTC], ["updated_at", 2017-04-02 01:17:10 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dr. Skylar Nienow"], ["service_era", "Uranus"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Teresa O'Reilly"], ["service_era", "Neptune"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Miss Judy Ortiz"], ["service_era", "Jupiter"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Clark Collier"], ["service_era", "Uranus"], ["status", "Hutt"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Antonina Roberts"], ["service_era", "Mercury"], ["status", "Neimoidian"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jalon Runolfsdottir"], ["service_era", "Jupiter"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zachery Little IV"], ["service_era", "Earth"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Berta Olson DVM"], ["service_era", "Venus"], ["status", "Jawa"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Fleta Dickinson"], ["service_era", "Mercury"], ["status", "Jawa"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Era Mann"], ["service_era", "Mars"], ["status", "Ewok"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Libbie Crona"], ["service_era", "Saturn"], ["status", "Wookiee"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jonatan VonRueden"], ["service_era", "Uranus"], ["status", "Ithorian"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rogelio Block"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Freddy Will"], ["service_era", "Earth"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Aglae Braun"], ["service_era", "Venus"], ["status", "Gungan"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 1], ["name", "Mon Calamari"], ["description", "8-bit bicycle rights fingerstache. Asymmetrical vhs bitters forage tote bag paleo cronut pop-up. Celiac viral shoreditch. Mixtape pork belly wolf tilde umami."], ["era_served", "Venus"], ["category", "Peregrin Took"], ["avg_rating", 2.7], ["url", "murphy.info"], ["address1", "382 Kali Drive"], ["address2", "Suite 602"], ["city", "Westview"], ["state", "North Dakota"], ["zipcode", 61067], ["phone", 643], ["email", "leopoldo@oberbrunner.co"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 5], ["name", "Ewok"], ["description", "Bitters loko brooklyn salvia. Selfies fixie etsy tacos. Forage poutine 8-bit butcher."], ["era_served", "Uranus"], ["category", "Glorfindel"], ["avg_rating", 5.3], ["url", "mclaughlin.com"], ["address1", "938 Okuneva Isle"], ["address2", "Apt. 193"], ["city", "Port Jazmynville"], ["state", "Ohio"], ["zipcode", 26723], ["phone", 1], ["email", "dennis@kunde.io"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 4], ["name", "Gungan"], ["description", "Venmo listicle vice. Iphone photo booth food truck sriracha letterpress truffaut ramps before they sold out. Small batch tacos waistcoat roof gastropub."], ["era_served", "Neptune"], ["category", "Faramir"], ["avg_rating", 6.8], ["url", "oreillybogisich.biz"], ["address1", "8555 Tevin Crescent"], ["address2", "Apt. 381"], ["city", "Lake Othamouth"], ["state", "Hawaii"], ["zipcode", 57071], ["phone", 1], ["email", "kylee@loweryan.name"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 11], ["name", "Mon Calamari"], ["description", "Beard health swag lomo brooklyn drinking meditation jean shorts. Pabst cred selvage raw denim disrupt keffiyeh. Pabst narwhal fanny pack."], ["era_served", "Jupiter"], ["category", "Tom Bombadil"], ["avg_rating", 2.3], ["url", "framiromaguera.biz"], ["address1", "4340 Rowena Roads"], ["address2", "Suite 454"], ["city", "Kunzeshire"], ["state", "Rhode Island"], ["zipcode", 66831], ["phone", 918], ["email", "clementine@streich.biz"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 1], ["name", "Neimoidian"], ["description", "Migas vinyl letterpress franzen bespoke tumblr. Readymade knausgaard everyday mlkshk twee. Kickstarter etsy seitan food truck organic +1. Franzen iphone asymmetrical artisan chicharrones sriracha cliche. Raw denim mixtape twee microdosing pbr&b."], ["era_served", "Jupiter"], ["category", "Shelob"], ["avg_rating", 5.7], ["url", "auer.biz"], ["address1", "91337 Evert Villages"], ["address2", "Apt. 413"], ["city", "New Skye"], ["state", "North Dakota"], ["zipcode", 85104], ["phone", 278], ["email", "althea.jerde@kertzmann.org"], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "rating", "feedback", "recommend", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 12], ["rating", 9], ["feedback", "Pickled pitchfork godard semiotics beard artisan. Locavore keytar put a bird on it gentrify neutra 90's. Gluten-free kale chips shabby chic mlkshk etsy. Xoxo keffiyeh narwhal everyday food truck farm-to-table schlitz. Bushwick 90's pbr&b semiotics beard."], ["recommend", false], ["organization_id", 7], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "rating", "feedback", "recommend", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 6], ["rating", 3], ["feedback", "Chartreuse artisan twee yuccie. Pinterest church-key dreamcatcher swag cardigan raw denim. Blue bottle brooklyn chicharrones tilde small batch deep v. Brooklyn bespoke put a bird on it hammock synth aesthetic hashtag."], ["recommend", false], ["organization_id", 4], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "rating", "feedback", "recommend", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 3], ["rating", 7], ["feedback", "Try-hard chartreuse pickled tote bag. Hella poutine selfies thundercats craft beer stumptown salvia umami. Food truck viral pbr&b poutine loko try-hard 3 wolf moon 90's. 3 wolf moon pinterest kitsch leggings art party."], ["recommend", true], ["organization_id", 9], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "rating", "feedback", "recommend", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 12], ["rating", 1], ["feedback", "Quinoa banh mi sriracha helvetica carry. Chartreuse sustainable pabst chambray ethical quinoa squid. Neutra echo deep v. Kale chips diy authentic williamsburg normcore marfa. Godard waistcoat kinfolk microdosing food truck carry."], ["recommend", false], ["organization_id", 2], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "rating", "feedback", "recommend", "organization_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 12], ["rating", 7], ["feedback", "Venmo next level messenger bag single-origin coffee kickstarter. Tacos pitchfork photo booth. Vinyl echo bitters bicycle rights salvia trust fund."], ["recommend", true], ["organization_id", 11], ["created_at", 2017-04-02 01:19:09 UTC], ["updated_at", 2017-04-02 01:19:09 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (21.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (484.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "finder_development"[0m
+  [1m[35m (361.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "finder_test"[0m
+  [1m[35m (41.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying(50), "service_era" character varying(50), "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" serial primary key, "creator_id" integer, "name" character varying(100) NOT NULL, "description" text NOT NULL, "era_served" character varying NOT NULL, "category" character varying NOT NULL, "avg_rating" float NOT NULL, "url" character varying NOT NULL, "address1" character varying NOT NULL, "address2" character varying, "city" character varying NOT NULL, "state" character varying NOT NULL, "zipcode" integer NOT NULL, "phone" integer, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer, "rating" integer NOT NULL, "feedback" text NOT NULL, "recommend" boolean NOT NULL, "organization_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (6.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401215245"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-04 14:00:16 UTC], ["updated_at", 2017-04-04 14:00:16 UTC]]
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jacey Daniel"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Forrest Pfannerstill"], ["service_era", "Neptune"], ["status", "Jawa"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Robb Cormier"], ["service_era", "Uranus"], ["status", "Ewok"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ms. Virgie Ruecker"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rosalee McCullough"], ["service_era", "Saturn"], ["status", "Sullustan"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alba Goyette"], ["service_era", "Mercury"], ["status", "Ithorian"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Grover Thompson IV"], ["service_era", "Neptune"], ["status", "Jawa"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hugh Halvorson"], ["service_era", "Jupiter"], ["status", "Ewok"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Ted Reichert"], ["service_era", "Jupiter"], ["status", "Ewok"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Zachary Koch"], ["service_era", "Mars"], ["status", "Mon Calamari"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Santina Bernier DDS"], ["service_era", "Neptune"], ["status", "Sullustan"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Alf Barrows"], ["service_era", "Neptune"], ["status", "Mon Calamari"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rogers Satterfield"], ["service_era", "Saturn"], ["status", "Mon Calamari"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Esperanza Goodwin"], ["service_era", "Neptune"], ["status", "Jawa"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Deangelo Herzog"], ["service_era", "Neptune"], ["status", "Ithorian"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 13], ["name", "Mon Calamari"], ["description", "Tilde ugh authentic tacos artisan. Synth skateboard meditation keytar banh mi ramps. Yolo selvage tacos blog cold-pressed chambray ramps. Ennui goth organic. Cliche 90's gastropub vhs."], ["era_served", "Earth"], ["category", "Éomer"], ["avg_rating", 1.8], ["url", "barrows.biz"], ["address1", "685 Mertz Ridge"], ["address2", "Apt. 297"], ["city", "South Carole"], ["state", "Mississippi"], ["zipcode", 95406], ["phone", 1], ["email", "thora@heel.name"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 12], ["name", "Gungan"], ["description", "Banh mi vinegar pitchfork humblebrag raw denim. Hammock brooklyn portland kickstarter pug meh cleanse. Echo viral synth hella carry. Cray craft beer organic readymade cold-pressed typewriter. Cronut kinfolk disrupt iphone wes anderson listicle."], ["era_served", "Earth"], ["category", "Sauron"], ["avg_rating", 6.0], ["url", "bergstrom.org"], ["address1", "7807 Diego Islands"], ["address2", "Apt. 813"], ["city", "South Kara"], ["state", "South Dakota"], ["zipcode", 21418], ["phone", 1], ["email", "olen.schuppe@franeckibatz.biz"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 3], ["name", "Gungan"], ["description", "Pickled freegan godard cleanse. Leggings blue bottle single-origin coffee cliche. Keffiyeh 3 wolf moon lo-fi. Truffaut put a bird on it offal tilde intelligentsia. Cronut lumbersexual chillwave retro green juice pork belly vinyl."], ["era_served", "Venus"], ["category", "Bilbo Baggins"], ["avg_rating", 7.3], ["url", "macgyver.com"], ["address1", "73273 Waters Keys"], ["address2", "Suite 661"], ["city", "Quigleybury"], ["state", "Virginia"], ["zipcode", 73688], ["phone", 1], ["email", "brandy@corwin.co"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 9], ["name", "Hutt"], ["description", "Occupy selvage roof keffiyeh bushwick cleanse. Church-key listicle brunch godard disrupt. Green juice actually hella. Narwhal tumblr ennui mixtape chartreuse forage offal goth. Echo banjo locavore taxidermy."], ["era_served", "Neptune"], ["category", "Théoden"], ["avg_rating", 8.2], ["url", "price.co"], ["address1", "5781 Stoltenberg Center"], ["address2", "Apt. 528"], ["city", "East Torrey"], ["state", "California"], ["zipcode", 94194], ["phone", 575], ["email", "reyna_goldner@bergstrom.biz"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 1], ["name", "Ithorian"], ["description", "Forage pitchfork ethical squid portland banjo. Xoxo organic leggings fingerstache brooklyn waistcoat food truck blue bottle. Keytar dreamcatcher pop-up street. Craft beer cray forage echo."], ["era_served", "Uranus"], ["category", "Faramir"], ["avg_rating", 8.2], ["url", "runolfon.com"], ["address1", "12462 Jenkins Row"], ["address2", "Apt. 435"], ["city", "East Mireilleborough"], ["state", "Tennessee"], ["zipcode", 43729], ["phone", 100], ["email", "jadon_osinski@stoltenberg.net"], ["created_at", 2017-04-04 14:00:25 UTC], ["updated_at", 2017-04-04 14:00:25 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (6.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (228.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "finder_development"[0m
+  [1m[35m (208.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "finder_test"[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4206071654564640315);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateInitialSchema (20170401215245)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "name" character varying(50), "service_era" character varying(50), "status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "organizations" ("id" serial primary key, "creator_id" integer, "name" character varying(100) NOT NULL, "description" text NOT NULL, "era_served" character varying NOT NULL, "category" character varying NOT NULL, "avg_rating" float NOT NULL, "url" character varying NOT NULL, "address1" character varying NOT NULL, "address2" character varying, "city" character varying NOT NULL, "state" character varying NOT NULL, "zipcode" integer NOT NULL, "phone" integer, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer, "rating" integer NOT NULL, "feedback" text NOT NULL, "recommend" boolean NOT NULL, "organization_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170401215245"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-04 14:23:56 UTC], ["updated_at", 2017-04-04 14:23:56 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4206071654564640315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Elfrieda Ferry"], ["service_era", "Mars"], ["status", "Wookiee"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Candida Trantow"], ["service_era", "Saturn"], ["status", "Ewok"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Hester Upton"], ["service_era", "Neptune"], ["status", "Ewok"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Arnulfo Altenwerth"], ["service_era", "Venus"], ["status", "Ithorian"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Doyle Nitzsche"], ["service_era", "Jupiter"], ["status", "Sullustan"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Chelsea Schumm"], ["service_era", "Saturn"], ["status", "Wookiee"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dorthy Schneider"], ["service_era", "Earth"], ["status", "Mon Calamari"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Tiana Littel"], ["service_era", "Uranus"], ["status", "Mon Calamari"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jamar Volkman V"], ["service_era", "Uranus"], ["status", "Wookiee"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Terry Green"], ["service_era", "Neptune"], ["status", "Hutt"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Dannie Mayert"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-04 14:24:19 UTC], ["updated_at", 2017-04-04 14:24:19 UTC]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mathilde Zulauf"], ["service_era", "Mercury"], ["status", "Ewok"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jeremie Emard"], ["service_era", "Uranus"], ["status", "Neimoidian"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Mrs. Bertrand O'Kon"], ["service_era", "Venus"], ["status", "Sullustan"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "service_era", "status", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Freeman Kirlin"], ["service_era", "Saturn"], ["status", "Gungan"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 15], ["name", "Sullustan"], ["description", "Gluten-free mlkshk meh shabby chic twee. Cold-pressed hella locavore. Bicycle rights truffaut ennui kitsch fanny pack tumblr crucifix."], ["era_served", "Mercury"], ["category", "Beregond"], ["avg_rating", 8.8], ["url", "gutmann.biz"], ["address1", "66249 Torp Meadows"], ["address2", "Suite 557"], ["city", "Bernhardmouth"], ["state", "Texas"], ["zipcode", 77114], ["phone", 1], ["email", "junius@rippin.com"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 3], ["name", "Neimoidian"], ["description", "Wolf tofu vinegar. Offal flannel biodiesel squid actually master meh. Meditation five dollar toast semiotics vinegar chia trust fund."], ["era_served", "Neptune"], ["category", "Elrond"], ["avg_rating", 4.5], ["url", "bruen.info"], ["address1", "13243 Yesenia Ramp"], ["address2", "Suite 469"], ["city", "Kingborough"], ["state", "Indiana"], ["zipcode", 55998], ["phone", 950], ["email", "cristopher@willms.info"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 10], ["name", "Hutt"], ["description", "Street keffiyeh hammock 8-bit cronut gluten-free. Seitan shabby chic taxidermy celiac bitters chicharrones. Viral heirloom kogi whatever godard roof kale chips."], ["era_served", "Venus"], ["category", "Arwen Evenstar"], ["avg_rating", 6.5], ["url", "boyer.info"], ["address1", "27992 Eichmann Trail"], ["address2", "Suite 480"], ["city", "Beiertown"], ["state", "Massachusetts"], ["zipcode", 74772], ["phone", 919], ["email", "jadyn@okonbashirian.io"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 4], ["name", "Sullustan"], ["description", "Poutine sustainable chia try-hard tumblr yr. Farm-to-table shabby chic knausgaard occupy bicycle rights. You probably haven't heard of them gastropub forage fingerstache chartreuse tote bag. Craft beer iphone drinking scenester authentic banjo letterpress sartorial. Intelligentsia blue bottle sriracha."], ["era_served", "Mars"], ["category", "Shelob"], ["avg_rating", 2.1], ["url", "mohr.org"], ["address1", "644 Newton Spurs"], ["address2", "Apt. 338"], ["city", "Dickensside"], ["state", "Vermont"], ["zipcode", 36552], ["phone", 1], ["email", "freddie@schumm.name"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "avg_rating", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["creator_id", 14], ["name", "Wookiee"], ["description", "Normcore banjo wolf health. Williamsburg church-key chia humblebrag celiac. Kitsch 90's diy xoxo. Pop-up hoodie selfies gastropub."], ["era_served", "Earth"], ["category", "Gandalf the Grey"], ["avg_rating", 9.8], ["url", "kovacek.biz"], ["address1", "839 Wiza Station"], ["address2", "Suite 938"], ["city", "Isidrochester"], ["state", "Vermont"], ["zipcode", 71746], ["phone", 0], ["email", "avery@bauchherzog.co"], ["created_at", 2017-04-04 14:24:20 UTC], ["updated_at", 2017-04-04 14:24:20 UTC]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
