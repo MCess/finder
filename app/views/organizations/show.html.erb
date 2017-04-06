@@ -1,46 +1,59 @@
-<h2><%= @organizations.name %></h2>
+<h2><%= @organization.name %></h2>
 
 <p>
   <strong>Service Type</strong></br>
-  <%= @organizations.category %>
+  <%= @organization.category %>
 </p>
 
 <p>
   <strong>Eras We Serve</strong></br>
-  <%= @organizations.era_served %>
+  <%= @organization.era_served %>
 </p>
 
 <p>
   <strong>Mission Statement</strong></br>
-  <%= @organizations.description %>
+  <%= @organization.description %>
 </p>
 
 <p class="show-header">
   <strong>Rating</strong></br>
-  <%= @organizations.avg_rating %>
+  <%= @organization.avg_rating %>
 </p>
 
 <p>
   <strong>Website</strong></br>
-  <%= @organizations.url %>
+  <%= @organization.url %>
 </p>
 
 <p>
   <strong>Contact</strong></br>
-  <%= @organizations.email %>
+  <%= @organization.email %>
 </p>
 
 <p>
   <strong>phone</strong></br>
-  <%= @organizations.phone %>
+  <%= @organization.phone %>
 </p>
 
 <p>
   <strong>Address</strong></br>
-  <%= @organizations.address1 %>
-  <%= @organizations.address2 %></br>
-  <%= @organizations.city %>,</br>
-  <%= @organizations.state %>
-  <%= @organizations.zipcode %></br>
+  <%= @organization.address1 %>
+  <%= @organization.address2 %></br>
+  <%= @organization.city %>,</br>
+  <%= @organization.state %>
+  <%= @organization.zipcode %></br>
 </p>
 
+  <h2> All Reviews </h2>
+  <table class="listing" summary="Post list">
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= review.rating %></td>
+        <td><%= review.feedback %></td>
+        <td><%= review.recommend %></td>
+        
+        </td>
+        <% end %>
+      </tr>
+  </table>
+</div>

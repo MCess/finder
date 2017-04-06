@@ -32,7 +32,8 @@ class OrganizationsController < ApplicationController
     end
 
     def show
-      @organizations = Organization.find(params[:id])   
+      @organization = Organization.find(params[:id])
+      @reviews = @organization.reviews
     end
 
   #   def edit
