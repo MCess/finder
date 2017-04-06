@@ -1,0 +1,30 @@
+<p> <% if current_user %>
+Hello <%= current_user.name %>!
+<% end %>
+  </p>
+<div class="orgs index">
+  <h2> All Organizations </h2>
+  <table class="listing" summary="Post list">
+    <tr>
+      <th> Organization Name </th>
+      <th> Information </th>
+      <th> Service Type </th>
+      <th> Rating </th>
+    </tr>
+    <% @organizations.each do |organization| %>
+      <tr>
+        <td><%= organization.name %></td>
+        <td><%= organization.description %></td>
+        <td><%= organization.category %></td>
+        <td><%= organization.avg_rating %></td>
+        <td><%= link_to 'Learn More', organization_path(organization), :class => 'show' %></td>
+        </td>
+        <% end %>
+      </tr>
+  </table>
+</div>
+</br>
+
+<%= link_to 'Add a New Organization', new_organization_path %>
+
+<%= link_to 'Edit my account', edit_user_registration_path %>

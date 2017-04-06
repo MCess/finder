@@ -1,0 +1,94 @@
+<h2>Join Tracer Today and Help Guide the Veteran Community!</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email%>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <p>During what eras did you serve?</p>
+  <div class="radio-group">
+      <%= f.radio_button :service_era, "World War II" %>
+      <%= label_tag(:world_war_ii, "World War II") %>
+      <br>
+      <%= f.radio_button :service_era, "Korea" %>
+      <%= label_tag(:korea, "Korea") %>
+      <br>
+      <%= f.radio_button :service_era, "Vietnam" %>
+      <%= label_tag(:vietnam, "Vietnam") %>
+      <br>
+      <%= f.radio_button :service_era, "Persian Gulf" %>
+      <%= label_tag(:persian_gulf, "Persian Gulf") %>
+      <br>
+      <%= f.radio_button :service_era, "GWOT" %>
+      <%= label_tag(:gwot, "GWOT") %>
+  </div>
+  <br>
+
+  <p>What is your current status?</p>
+  <div class="radio-group">
+      <%= f.radio_button :status, "Active Duty" %>
+      <%= label_tag(:active_duty, "Active Duty") %>
+      <br>
+      <%= f.radio_button :status, "Reserves" %>
+      <%= label_tag(:reserves, "Reserves") %>
+      <br>
+      <%= f.radio_button :status, "National Guard" %>
+      <%= label_tag(:national_guard, "National Guard") %>
+      <br>
+      <%= f.radio_button :status, "Veteran" %>
+      <%= label_tag(:veteran, "Veteran") %>
+      <br>
+      <%= f.radio_button :status, "Spouse or family" %>
+      <%= label_tag(:spouse, "Spouse or family") %>
+  </div>
+  <br>
+
+  <p>What branch did you serve in?</p>
+    <div class="radio-group">
+        <%= f.radio_button :branch, "Army" %>
+        <%= label_tag(:army, "Army") %>
+        <br>
+        <%= f.radio_button :branch, "Marines" %>
+        <%= label_tag(:marines, "Marines") %>
+        <br>
+        <%= f.radio_button :branch, "Navy" %>
+        <%= label_tag(:navy, "Navy") %>
+        <br>
+        <%= f.radio_button :branch, "Air Force" %>
+        <%= label_tag(:air_force, "Air Force") %>
+        <br>
+        <%= f.radio_button :branch, "Coast Guard" %>
+        <%= label_tag(:coast_guard, "Coast Guard") %>
+        <br>
+    </div>
+    <br>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

@@ -1,0 +1,111 @@
+<%= form_for :organization, url: organizations_path do |f| %>
+  <% if @organizations.errors.any? %>
+      <div id="error_explanation">
+      <h2>
+        <%= pluralize(@organizations.errors.count, "error") %>
+prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+        <% @organizations.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<h1> Add a new organization </h1>
+
+  <div class="field">
+  <h3>Name of the Organization</h3>
+   <%= f.label :name, class: "hidden" %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+  <h3>Organization Description</h3>
+  <%= f.label :description, class: "hidden" %>
+   <%= f.text_area :description, style: 'width:60%;', :placeholder => "This is where you write about the organization" %>
+   </div>
+
+  <h3>What eras of veterans do you serve?</h3>
+  <div class="radio-group">
+    <%= f.radio_button :era_served, "WWII" %>
+    <%= label_tag(:wwii, "WWII") %>
+    <%= f.radio_button :era_served, "Korea" %>
+    <%= label_tag(:korea, "Korea") %>
+    <%= f.radio_button :era_served, "Persian Gulf" %>
+    <%= label_tag(:persian, "Persian Gulf") %>
+    <%= f.radio_button :era_served, "GWOT" %>
+    <%= label_tag(:gwot, "GWOT") %>
+    <br>
+  </div>
+
+  <h3>What is the primary service they provide to the veteran community?</h3>
+  <div class="radio-group">
+    <%= f.radio_button :category, "Fitness" %>
+    <%= label_tag(:fitness, "Fitness") %>
+    <%= f.radio_button :category, "Legal Aid" %>
+    <%= label_tag(:legal_aid, "Legal Aid") %>
+    <%= f.radio_button :category, "Housing" %>
+    <%= label_tag(:housing, "Housing") %>
+    <%= f.radio_button :category, "Financial" %>
+    <%= label_tag(:financial, "Financial") %>   <br />
+
+    <%= f.radio_button :category, "Education" %>
+    <%= label_tag(:education, "Education") %>
+    <%= f.radio_button :category, "Family Support" %>
+    <%= label_tag(:family_support, "Family Support") %>
+    <%= f.radio_button :category, "Disability Benefits" %>
+    <%= label_tag(:disability_benefits, "Disability Benefits") %>   <br />
+    <%= f.radio_button :category, "Mental Health" %>
+    <%= label_tag(:mental_health, "Mental Health") %>
+    <%= f.radio_button :category, "Employment" %>
+    <%= label_tag(:employment, "Employment") %>
+    <%= f.radio_button :category, "Mentoring" %>
+    <%= label_tag(:mentoring, "Mentoring") %>
+    <%= f.radio_button :category, "HealthCare" %>
+    <%= label_tag(:health_care, "Health Care") %>
+  </div>
+
+
+  <h3>Organization's Website</h3>
+  <div class="field">
+   <%= f.label :url, class: "hidden" %>
+    <%= f.text_field :url %>
+  </div>
+
+  <h3>Address</h3>
+  <div class="field">
+    <%= f.label :address1, class: "hidden" %>
+    <%= f.text_field :address1, :placeholder => "123 Fake Street" %>
+    <br />
+    <%= f.label :address2, class: "hidden" %>
+    <%= f.text_field :address2, :placeholder => "Suite 1" %>
+    <br />
+    <%= f.label :city, class: "hidden" %>
+    <%= f.text_field :city, :placeholder => "Chicago" %>
+    <br />
+    <%= f.label :state, class: "hidden" %>
+    <%= f.text_field :state, :placeholder => "Illinois" %>
+    <br />
+    <%= f.label :zipcode, class: "hidden" %>
+    <%= f.text_field :zipcode, :maxlength => 5, :size => 15, :placeholder => "12345" %>
+    <br />
+  </div>
+
+  <h3>Phone</h3>
+  <div class="field">
+    <%= f.label :phone, class: "hidden" %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+  <h3>Email</h3>
+    <%= f.label :email, class: "hidden" %>
+    <%= f.text_field :email %>
+  </div>
+
+
+
+  <br>
+  <%= f.submit "submit", class: "btn btn-primary" %>
+<% end %>
