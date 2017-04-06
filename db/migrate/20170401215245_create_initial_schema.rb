@@ -1,9 +1,10 @@
 class CreateInitialSchema < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|
-      t.string :name, :limit => 50
-      t.string :service_era, :limit => 50
-      t.string :status
+      t.string :name, :limit => 50, :null => false
+      t.string :service_era, :limit => 50, :null => false
+      t.string :status, :null => false
+      t.string :branch, :null => false
       t.timestamps 
     end
     create_table :organizations do |t|
@@ -12,14 +13,14 @@ class CreateInitialSchema < ActiveRecord::Migration[5.0]
       t.text :description, :limit => 350, :null => false
       t.string :era_served, :null => false 
       t.string :category, :null => false
-      t.float :avg_rating, :null => false
+      t.float :avg_rating
       t.string :url, :null => false
       t.string :address1, :null => false
       t.string :address2
       t.string :city, :null => false
       t.string :state, :null => false
       t.integer :zipcode, :null => false
-      t.integer :phone
+      t.string :phone
       t.string :email
       t.timestamps
     end
