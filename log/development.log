@@ -10773,3 +10773,25 @@ Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 2.1ms)
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+Started GET "/" for ::1 at 2017-04-06 22:08:39 -0500
+Started GET "/" for ::1 at 2017-04-06 22:08:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (6.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (6.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrganizationsController#home as HTML
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (31.1ms)
+  Rendered organizations/home.html.erb within layouts/application (142.3ms)
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (16.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.6ms)
+Completed 200 OK in 522ms (Views: 466.6ms | ActiveRecord: 25.4ms)
+
+
+  Rendered layouts/_menu.html.erb (0.2ms)
+Completed 200 OK in 543ms (Views: 462.1ms | ActiveRecord: 30.2ms)
+
+
