@@ -2,4 +2,36 @@
 
 <h3> Discover and review services for the veteran community!</h3>
 
-<%= link_to 'View all Organizations', organizations_path %>
+<%= link_to 'Education Organizations', organizations_path(@organizations.select { |org| org.category == 'Education'}) %>
+
+<%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+
+<%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+
+<%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
+
+<%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %>
+
+<%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+
+<%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+
+<%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+
+<%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+
+<%= link_to 'Employment', organization_path(@organizations.select { |org| org.category == 'Employment'}) %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%= link_to '5 Star Ratings', organization_path(@organizations.select { |org| org.category == 'Education'}) %>

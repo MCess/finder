@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'organizations#home'
 
   # resources :users
-  resources :organizations, param: :category
+  resources :organizations
+    resources :reviews 
+
 
 
   # devise_scope :user do

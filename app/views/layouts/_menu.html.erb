@@ -1,3 +1,4 @@
 <a href= '/'>Home</a>
-<%= link_to("View All Organizations", organizations_path) %>
+<%= link_to("View All Organizations", organizations_path) %>,
+<%= link_to 'Review an Organization', new_review_path %>,
 <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
