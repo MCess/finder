@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show, :home]
 
    def home
-  
+    @organizations  = Organization.all
    end
 
    def index
@@ -69,6 +69,8 @@ class OrganizationsController < ApplicationController
     def find_org
       @organizations = Organization.find_by_id(params[:id])
     end
+
+
   
 
 end

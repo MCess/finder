@@ -8828,3 +8828,1948 @@ Processing by OrganizationsController#home as HTML
 Completed 200 OK in 79ms (Views: 69.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for ::1 at 2017-04-06 19:13:49 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (20.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 139ms (Views: 114.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 19:13:54 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (1.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (23.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 86ms (Views: 52.2ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 19:20:44 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (8.3ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 89.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/organizations/1" for ::1 at 2017-04-06 19:20:46 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 1]]
+  Rendered organizations/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (12.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 51ms (Views: 32.1ms | ActiveRecord: 13.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:42:25 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (13.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (110.7ms)
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 43.8ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     6: 
+     7: <%= link_to 'Education Organizations', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+     8: 
+     9: <%= link_to 'Legal Services', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+  
+app/views/organizations/home.html.erb:9:in `_app_views_organizations_home_html_erb___463220682589889607_70341122770280'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (19.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (123.9ms)
+Started GET "/" for ::1 at 2017-04-06 19:42:48 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (7.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 7.5ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     6: 
+     7: <%= link_to 'Education Organizations', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+     8: 
+     9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+  
+app/views/organizations/home.html.erb:9:in `_app_views_organizations_home_html_erb___463220682589889607_70341131818080'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (82.6ms)
+Started GET "/" for ::1 at 2017-04-06 19:42:52 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     6: 
+     7: <%= link_to 'Education Organizations', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+     8: 
+     9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+  
+app/views/organizations/home.html.erb:9:in `_app_views_organizations_home_html_erb___463220682589889607_70341111947580'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (15.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.2ms)
+Started GET "/" for ::1 at 2017-04-06 19:43:32 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     8: 
+     9: 
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+    13: <%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
+    14: 
+  
+app/views/organizations/home.html.erb:11:in `_app_views_organizations_home_html_erb___463220682589889607_70341076602940'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.5ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.7ms)
+Started GET "/" for ::1 at 2017-04-06 19:44:06 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     6: 
+     7: <%= link_to 'Education Organizations', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+     8: 
+     9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+  
+app/views/organizations/home.html.erb:9:in `_app_views_organizations_home_html_erb___463220682589889607_70341132829940'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.3ms)
+Started GET "/" for ::1 at 2017-04-06 19:44:51 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     6: 
+     7: <%= link_to 'Education Organizations', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+     8: 
+     9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+  
+app/views/organizations/home.html.erb:9:in `_app_views_organizations_home_html_erb___463220682589889607_70341121788620'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.5ms)
+Started GET "/organizations" for ::1 at 2017-04-06 19:44:57 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (15.3ms)
+  Rendered layouts/_menu.html.erb (2.4ms)
+Completed 200 OK in 118ms (Views: 110.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/organizations/new" for ::1 at 2017-04-06 19:44:59 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (7.5ms)
+  Rendered organizations/new.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/organizations" for ::1 at 2017-04-06 19:45:50 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3/EB2NHf3m91m5SQCsI6ptr8xTlXyTsvZMIYXxQQ4RSvw8blwshB6Bcyc14ZjwUPlx0YwW6mstpaLJ7sLSr9iQ==", "organization"=>{"name"=>"City Bar", "description"=>"Provide free legal aid", "era_served"=>"GWOT", "category"=>"Legal Aid", "url"=>"www.citybarchicago.com", "address1"=>"", "address2"=>"", "city"=>"", "state"=>"", "zipcode"=>"", "phone"=>"123456789", "email"=>"citybar@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (18.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (75.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["creator_id", 3], ["name", "City Bar"], ["description", "Provide free legal aid"], ["era_served", "GWOT"], ["category", "Legal Aid"], ["url", "www.citybarchicago.com"], ["address1", ""], ["address2", ""], ["city", ""], ["state", ""], ["phone", "123456789"], ["email", "citybar@gmail.com"], ["created_at", 2017-04-07 00:45:50 UTC], ["updated_at", 2017-04-07 00:45:50 UTC]]
+  [1m[35m (4.5ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 100.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::NotNullViolation: ERROR:  null value in column "zipcode" violates not-null constraint
+DETAIL:  Failing row contains (6, 3, City Bar, Provide free legal aid, GWOT, Legal Aid, null, www.citybarchicago.com, , , , , null, 123456789, citybar@gmail.com, 2017-04-07 00:45:50.095806, 2017-04-07 00:45:50.095806).
+: INSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"):
+  
+app/controllers/organizations_controller.rb:25:in `create'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.2ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (94.8ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:46:34 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"City Bar", "description"=>"Provide free legal aid", "era_served"=>"GWOT", "category"=>"Legal Aid", "url"=>"www.citybarchicago.com", "address1"=>"112", "address2"=>"suite 2", "city"=>"chicago", "state"=>"IL", "zipcode"=>"09876", "phone"=>"123456789", "email"=>"citybar@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (62.8ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "City Bar"], ["description", "Provide free legal aid"], ["era_served", "GWOT"], ["category", "Legal Aid"], ["url", "www.citybarchicago.com"], ["address1", "112"], ["address2", "suite 2"], ["city", "chicago"], ["state", "IL"], ["zipcode", 9876], ["phone", "123456789"], ["email", "citybar@gmail.com"], ["created_at", 2017-04-07 00:46:34 UTC], ["updated_at", 2017-04-07 00:46:34 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 82ms (ActiveRecord: 70.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:46:34 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+     8: 
+     9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+    13: <%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
+    14: 
+  
+app/views/organizations/home.html.erb:11:in `_app_views_organizations_home_html_erb___463220682589889607_70341131914480'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (83.2ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:47:41 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"Vet Gym", "description"=>"Free gym for vets", "era_served"=>"GWOT", "category"=>"Fitness", "url"=>"www.citybarchicago.com", "address1"=>"gym street", "address2"=>"suite 1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08675", "phone"=>"987654321", "email"=>"vetgym@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "Vet Gym"], ["description", "Free gym for vets"], ["era_served", "GWOT"], ["category", "Fitness"], ["url", "www.citybarchicago.com"], ["address1", "gym street"], ["address2", "suite 1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8675], ["phone", "987654321"], ["email", "vetgym@gmail.com"], ["created_at", 2017-04-07 00:47:41 UTC], ["updated_at", 2017-04-07 00:47:41 UTC]]
+  [1m[35m (76.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms (ActiveRecord: 83.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:47:41 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (8.0ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    10: 
+    11: <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
+    12: 
+    13: <%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
+    14: 
+    15: <%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %>
+    16: 
+  
+app/views/organizations/home.html.erb:13:in `_app_views_organizations_home_html_erb___463220682589889607_70341111959760'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (22.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (100.2ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:48:59 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"vet housing", "description"=>"housing for vets", "era_served"=>"GWOT", "category"=>"Housing", "url"=>"www.veteranhousing.com", "address1"=>"123 not homeless st", "address2"=>"suite 1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08675", "phone"=>"987654321", "email"=>"vethousing@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "vet housing"], ["description", "housing for vets"], ["era_served", "GWOT"], ["category", "Housing"], ["url", "www.veteranhousing.com"], ["address1", "123 not homeless st"], ["address2", "suite 1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8675], ["phone", "987654321"], ["email", "vethousing@gmail.com"], ["created_at", 2017-04-07 00:48:59 UTC], ["updated_at", 2017-04-07 00:48:59 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:48:59 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    12: 
+    13: <%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
+    14: 
+    15: <%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %>
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+  
+app/views/organizations/home.html.erb:15:in `_app_views_organizations_home_html_erb___463220682589889607_70341079671400'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (87.7ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:51:42 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"vet center", "description"=>"family services veterans", "era_served"=>"GWOT", "category"=>"Family Support", "url"=>"www.veteranhousing.com", "address1"=>"123 vet center", "address2"=>"apt1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08675", "phone"=>"123456789", "email"=>"vetcenter@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (12.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "vet center"], ["description", "family services veterans"], ["era_served", "GWOT"], ["category", "Family Support"], ["url", "www.veteranhousing.com"], ["address1", "123 vet center"], ["address2", "apt1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8675], ["phone", "123456789"], ["email", "vetcenter@gmail.com"], ["created_at", 2017-04-07 00:51:42 UTC], ["updated_at", 2017-04-07 00:51:42 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 37ms (ActiveRecord: 24.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:51:42 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    14: 
+    15: <%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %>
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    20: 
+  
+app/views/organizations/home.html.erb:17:in `_app_views_organizations_home_html_erb___463220682589889607_70341080804500'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.5ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.0ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:52:51 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"headstrong", "description"=>"jhbsfvjlhefcljcds", "era_served"=>"GWOT", "category"=>"Mental Health", "url"=>"www.getheadstrong.org", "address1"=>"123 headstring", "address2"=>"apt1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08675", "phone"=>"987654321", "email"=>"headstrong@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "headstrong"], ["description", "jhbsfvjlhefcljcds"], ["era_served", "GWOT"], ["category", "Mental Health"], ["url", "www.getheadstrong.org"], ["address1", "123 headstring"], ["address2", "apt1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8675], ["phone", "987654321"], ["email", "headstrong@gmail.com"], ["created_at", 2017-04-07 00:52:51 UTC], ["updated_at", 2017-04-07 00:52:51 UTC]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 12.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:52:51 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    20: 
+    21: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341108683780'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (107.8ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:54:50 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xg57N7w4sC2rmXgNXPfSc9/qGR+NdUhVOQHsuTq1vOVtaXDVQsuDFDpcwnNrXP7YyKh9Vx7hfJ03e6aBl3VDmQ==", "organization"=>{"name"=>"VA hospital", "description"=>"jhbsfvjlhefcljcds", "era_served"=>"GWOT", "category"=>"Mental Health", "url"=>"www.va.org", "address1"=>"Jesse brown", "address2"=>"apt1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08675", "phone"=>"987654321", "email"=>"VAhospital@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "VA hospital"], ["description", "jhbsfvjlhefcljcds"], ["era_served", "GWOT"], ["category", "Mental Health"], ["url", "www.va.org"], ["address1", "Jesse brown"], ["address2", "apt1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8675], ["phone", "987654321"], ["email", "VAhospital@gmail.com"], ["created_at", 2017-04-07 00:54:50 UTC], ["updated_at", 2017-04-07 00:54:50 UTC]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:54:50 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    20: 
+    21: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341130828460'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.8ms)
+Started GET "/organizations/new" for ::1 at 2017-04-06 19:54:58 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (7.1ms)
+  Rendered organizations/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 114ms (Views: 95.5ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:55:26 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    20: 
+    21: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341132159200'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (97.2ms)
+Started GET "/organizations/new" for ::1 at 2017-04-06 19:55:30 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (29.2ms)
+  Rendered organizations/new.html.erb within layouts/application (34.7ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 107ms (Views: 94.1ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/organizations" for ::1 at 2017-04-06 19:57:45 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nxr5Eu4Etu6DDmRYY/5a3rLIpHvM/2UuuFSfLpAznsasffLwEPeF1xLL3iZUVXZ1pYrAM19rUea2LtUWPfNhug==", "organization"=>{"name"=>"jesse Brown", "description"=>"va hos[ital", "era_served"=>"All Eras", "category"=>"HealthCare", "url"=>"www.va.gov", "address1"=>"Jesse brown", "address2"=>"apt 1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08540", "phone"=>"234567891", "email"=>"jessebrown.gov"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "jesse Brown"], ["description", "va hos[ital"], ["era_served", "All Eras"], ["category", "HealthCare"], ["url", "www.va.gov"], ["address1", "Jesse brown"], ["address2", "apt 1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8540], ["phone", "234567891"], ["email", "jessebrown.gov"], ["created_at", 2017-04-07 00:57:45 UTC], ["updated_at", 2017-04-07 00:57:45 UTC]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:57:45 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341135092900'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.6ms)
+Started GET "/" for ::1 at 2017-04-06 19:57:58 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341123167820'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.6ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:58:17 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nxr5Eu4Etu6DDmRYY/5a3rLIpHvM/2UuuFSfLpAznsasffLwEPeF1xLL3iZUVXZ1pYrAM19rUea2LtUWPfNhug==", "organization"=>{"name"=>"jesse Brown", "description"=>"va hospital", "era_served"=>"All Eras", "category"=>"HealthCare", "url"=>"www.va.gov", "address1"=>"Jesse brown", "address2"=>"apt 1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08540", "phone"=>"234567891", "email"=>"jessebrown.gov"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "jesse Brown"], ["description", "va hospital"], ["era_served", "All Eras"], ["category", "HealthCare"], ["url", "www.va.gov"], ["address1", "Jesse brown"], ["address2", "apt 1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8540], ["phone", "234567891"], ["email", "jessebrown.gov"], ["created_at", 2017-04-07 00:58:17 UTC], ["updated_at", 2017-04-07 00:58:17 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 13.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:58:17 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (6.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341080464800'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (17.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (89.6ms)
+Started POST "/organizations" for ::1 at 2017-04-06 19:58:52 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nxr5Eu4Etu6DDmRYY/5a3rLIpHvM/2UuuFSfLpAznsasffLwEPeF1xLL3iZUVXZ1pYrAM19rUea2LtUWPfNhug==", "organization"=>{"name"=>"jesse Brown", "description"=>"va hospital", "era_served"=>"All Eras", "category"=>"HealthCare", "url"=>"www.va.gov", "address1"=>"Jesse brown", "address2"=>"apt 1", "city"=>"chicago", "state"=>"IL", "zipcode"=>"08540", "phone"=>"234567891", "email"=>"jessebrown.gov"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "jesse Brown"], ["description", "va hospital"], ["era_served", "All Eras"], ["category", "HealthCare"], ["url", "www.va.gov"], ["address1", "Jesse brown"], ["address2", "apt 1"], ["city", "chicago"], ["state", "IL"], ["zipcode", 8540], ["phone", "234567891"], ["email", "jessebrown.gov"], ["created_at", 2017-04-07 00:58:52 UTC], ["updated_at", 2017-04-07 00:58:52 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:58:52 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341135176240'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.0ms)
+Started GET "/" for ::1 at 2017-04-06 19:58:55 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341123069940'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.9ms)
+Started GET "/organizations/new" for ::1 at 2017-04-06 19:59:20 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (10.2ms)
+  Rendered organizations/new.html.erb within layouts/application (15.0ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 125ms (Views: 113.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 19:59:28 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341129477140'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (79.4ms)
+Started GET "/organizations/new" for ::1 at 2017-04-06 19:59:58 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (8.5ms)
+  Rendered organizations/new.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_menu.html.erb (3.4ms)
+Completed 200 OK in 63ms (Views: 55.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/organizations" for ::1 at 2017-04-06 20:00:55 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KQQBceQtXvjbqZ96WHFnYxDdyhOE2PsHNayKMYBs07jwxvnOWOGQnKrHAPeyuk2mwETYN2HVyQSrPgQa8FMMg==", "organization"=>{"name"=>"headstrongHQ", "description"=>"mental health", "era_served"=>"All Eras", "category"=>"Mental Health", "url"=>"www.getheadstrong.org", "address1"=>"headstronghq", "address2"=>"apt 4 ", "city"=>"Chicago", "state"=>"IL", "zipcode"=>"08734", "phone"=>"987654324", "email"=>"hS@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "headstrongHQ"], ["description", "mental health"], ["era_served", "All Eras"], ["category", "Mental Health"], ["url", "www.getheadstrong.org"], ["address1", "headstronghq"], ["address2", "apt 4 "], ["city", "Chicago"], ["state", "IL"], ["zipcode", 8734], ["phone", "987654324"], ["email", "hS@gmail.com"], ["created_at", 2017-04-07 01:00:55 UTC], ["updated_at", 2017-04-07 01:00:55 UTC]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:00:55 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    16: 
+    17: <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+  
+app/views/organizations/home.html.erb:19:in `_app_views_organizations_home_html_erb___463220682589889607_70341080689120'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (138.2ms)
+Started POST "/organizations" for ::1 at 2017-04-06 20:01:35 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KQQBceQtXvjbqZ96WHFnYxDdyhOE2PsHNayKMYBs07jwxvnOWOGQnKrHAPeyuk2mwETYN2HVyQSrPgQa8FMMg==", "organization"=>{"name"=>"headstrongHealthcare", "description"=>"Healthcare", "era_served"=>"All Eras", "category"=>"Health Care", "url"=>"www.getheadstrong.org", "address1"=>"headstronghq", "address2"=>"apt 4 ", "city"=>"Chicago", "state"=>"IL", "zipcode"=>"08734", "phone"=>"987654324", "email"=>"hS@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "headstrongHealthcare"], ["description", "Healthcare"], ["era_served", "All Eras"], ["category", "Health Care"], ["url", "www.getheadstrong.org"], ["address1", "headstronghq"], ["address2", "apt 4 "], ["city", "Chicago"], ["state", "IL"], ["zipcode", 8734], ["phone", "987654324"], ["email", "hS@gmail.com"], ["created_at", 2017-04-07 01:01:35 UTC], ["updated_at", 2017-04-07 01:01:35 UTC]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 26ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:01:35 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (2.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (9.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    18: 
+    19: <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+    23: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    24: 
+  
+app/views/organizations/home.html.erb:21:in `_app_views_organizations_home_html_erb___463220682589889607_70341111889980'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (109.1ms)
+Started POST "/organizations" for ::1 at 2017-04-06 20:02:12 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KQQBceQtXvjbqZ96WHFnYxDdyhOE2PsHNayKMYBs07jwxvnOWOGQnKrHAPeyuk2mwETYN2HVyQSrPgQa8FMMg==", "organization"=>{"name"=>"IAVA", "description"=>"disability benefits", "era_served"=>"GWOT", "category"=>"Disability Benefits", "url"=>"www.IAVA.org", "address1"=>"IAVA", "address2"=>"apt 4 ", "city"=>"Chicago", "state"=>"IL", "zipcode"=>"08734", "phone"=>"987654324", "email"=>"IAVA@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (11.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "IAVA"], ["description", "disability benefits"], ["era_served", "GWOT"], ["category", "Disability Benefits"], ["url", "www.IAVA.org"], ["address1", "IAVA"], ["address2", "apt 4 "], ["city", "Chicago"], ["state", "IL"], ["zipcode", 8734], ["phone", "987654324"], ["email", "IAVA@gmail.com"], ["created_at", 2017-04-07 01:02:12 UTC], ["updated_at", 2017-04-07 01:02:12 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:02:12 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    20: 
+    21: <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
+    22: 
+    23: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    24: 
+    25: <%= link_to 'Employment', organization_path(@organizations.select { |org| org.category == 'Employment'}) %>
+    26: 
+  
+app/views/organizations/home.html.erb:23:in `_app_views_organizations_home_html_erb___463220682589889607_70341123735620'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.3ms)
+Started POST "/organizations" for ::1 at 2017-04-06 20:03:05 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KQQBceQtXvjbqZ96WHFnYxDdyhOE2PsHNayKMYBs07jwxvnOWOGQnKrHAPeyuk2mwETYN2HVyQSrPgQa8FMMg==", "organization"=>{"name"=>"Provetus", "description"=>"disability benefits", "era_served"=>"GWOT", "category"=>"Mentoring", "url"=>"www.PV.org", "address1"=>"PV", "address2"=>"apt 4 ", "city"=>"Chicago", "state"=>"IL", "zipcode"=>"08734", "phone"=>"987654324", "email"=>"PV@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "Provetus"], ["description", "disability benefits"], ["era_served", "GWOT"], ["category", "Mentoring"], ["url", "www.PV.org"], ["address1", "PV"], ["address2", "apt 4 "], ["city", "Chicago"], ["state", "IL"], ["zipcode", 8734], ["phone", "987654324"], ["email", "PV@gmail.com"], ["created_at", 2017-04-07 01:03:05 UTC], ["updated_at", 2017-04-07 01:03:05 UTC]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:03:05 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"organizations", :id=>""} missing required keys: [:id]):
+    22: 
+    23: <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
+    24: 
+    25: <%= link_to 'Employment', organization_path(@organizations.select { |org| org.category == 'Employment'}) %>
+    26: 
+    27: 
+    28: 
+  
+app/views/organizations/home.html.erb:25:in `_app_views_organizations_home_html_erb___463220682589889607_70341080365260'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.3ms)
+Started POST "/organizations" for ::1 at 2017-04-06 20:03:36 -0500
+Processing by OrganizationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KQQBceQtXvjbqZ96WHFnYxDdyhOE2PsHNayKMYBs07jwxvnOWOGQnKrHAPeyuk2mwETYN2HVyQSrPgQa8FMMg==", "organization"=>{"name"=>"hirepurpose", "description"=>"Jobsd", "era_served"=>"GWOT", "category"=>"Employment", "url"=>"www.HP.org", "address1"=>"HP", "address2"=>"apt 4 ", "city"=>"Chicago", "state"=>"IL", "zipcode"=>"08734", "phone"=>"987654324", "email"=>"HP@gmail.com"}, "commit"=>"submit"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (6.5ms)[0m  [1m[32mINSERT INTO "organizations" ("creator_id", "name", "description", "era_served", "category", "url", "address1", "address2", "city", "state", "zipcode", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15) RETURNING "id"[0m  [["creator_id", 3], ["name", "hirepurpose"], ["description", "Jobsd"], ["era_served", "GWOT"], ["category", "Employment"], ["url", "www.HP.org"], ["address1", "HP"], ["address2", "apt 4 "], ["city", "Chicago"], ["state", "IL"], ["zipcode", 8734], ["phone", "987654324"], ["email", "HP@gmail.com"], ["created_at", 2017-04-07 01:03:36 UTC], ["updated_at", 2017-04-07 01:03:36 UTC]]
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:03:36 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 62.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/organizations/8" for ::1 at 2017-04-06 20:03:45 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 8]]
+  Rendered organizations/show.html.erb within layouts/application (3.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 60ms (Views: 38.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/organizations/11%2F12%2F16" for ::1 at 2017-04-06 20:03:53 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"11/12/16"}
+  [1m[36mOrganization Load (1.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (10.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 11]]
+  Rendered organizations/show.html.erb within layouts/application (13.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.6ms)
+Completed 200 OK in 49ms (Views: 30.5ms | ActiveRecord: 12.7ms)
+
+
+Started GET "/organizations/17" for ::1 at 2017-04-06 20:03:57 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 17]]
+  Rendered organizations/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:04:03 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (36.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.4ms)
+Completed 200 OK in 74ms (Views: 45.4ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/organizations/18" for ::1 at 2017-04-06 20:04:09 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 18]]
+  Rendered organizations/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizations/20" for ::1 at 2017-04-06 20:04:20 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 20]]
+  Rendered organizations/show.html.erb within layouts/application (2.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/organizations/9" for ::1 at 2017-04-06 20:04:24 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 9]]
+  Rendered organizations/show.html.erb within layouts/application (5.3ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 50ms (Views: 42.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:04:30 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (5.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 60.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:06:24 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (3.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 76ms (Views: 68.6ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/organizations/%23%3COrganization::ActiveRecord_Relation:0x007ff31ddbc1b8%3E" for ::1 at 2017-04-06 20:06:26 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"#<Organization::ActiveRecord_Relation:0x007ff31ddbc1b8>"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=#<Organization::ActiveRecord_Relation:0x007ff31ddbc1b8>):
+  
+app/controllers/organizations_controller.rb:35:in `show'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.0ms)
+Started GET "/" for ::1 at 2017-04-06 20:06:32 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (6.2ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 43ms (Views: 39.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:06:51 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  Rendered organizations/home.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `find_all' for nil:NilClass):
+    4: 
+    5: <%= link_to 'View all Organizations', organizations_path %>
+    6: 
+    7: <%= link_to 'Education Organizations', organization_path(@organization.find_all { |org| org.category == 'Education'}) %>
+    8: 
+    9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+   10: 
+  
+app/views/organizations/home.html.erb:7:in `_app_views_organizations_home_html_erb___463220682589889607_70341079405240'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (88.9ms)
+Started GET "/" for ::1 at 2017-04-06 20:07:07 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  Rendered organizations/home.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `find' for nil:NilClass):
+    4: 
+    5: <%= link_to 'View all Organizations', organizations_path %>
+    6: 
+    7: <%= link_to 'Education Organizations', organization_path(@organization.find { |org| org.category == 'Education'}) %>
+    8: 
+    9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+   10: 
+  
+app/views/organizations/home.html.erb:7:in `_app_views_organizations_home_html_erb___463220682589889607_70341076665260'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.2ms)
+Started GET "/" for ::1 at 2017-04-06 20:07:19 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  Rendered organizations/home.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (private method `select' called for nil:NilClass):
+    4: 
+    5: <%= link_to 'View all Organizations', organizations_path %>
+    6: 
+    7: <%= link_to 'Education Organizations', organization_path(@organization.select { |org| org.category == 'Education'}) %>
+    8: 
+    9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+   10: 
+  
+app/views/organizations/home.html.erb:7:in `_app_views_organizations_home_html_erb___463220682589889607_70341075396080'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (132.6ms)
+Started GET "/" for ::1 at 2017-04-06 20:07:35 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (3.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 81ms (Views: 76.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizations/4" for ::1 at 2017-04-06 20:07:37 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 56ms (Views: 38.0ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:07:47 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.0ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 50ms (Views: 44.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:07:49 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (16.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (21.8ms)
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.5ms)
+Completed 200 OK in 98ms (Views: 70.3ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:07:59 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 45ms (Views: 40.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/%23%3COrganization::ActiveRecord_Relation:0x007ff324cc22d8%3E" for ::1 at 2017-04-06 20:08:02 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"#<Organization::ActiveRecord_Relation:0x007ff324cc22d8>"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=#<Organization::ActiveRecord_Relation:0x007ff324cc22d8>):
+  
+app/controllers/organizations_controller.rb:35:in `show'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (83.9ms)
+Started GET "/" for ::1 at 2017-04-06 20:08:08 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (5.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (13.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 59ms (Views: 49.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/organizations/%23%3COrganization::ActiveRecord_Relation:0x007ff324133750%3E" for ::1 at 2017-04-06 20:08:18 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"#<Organization::ActiveRecord_Relation:0x007ff324133750>"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=#<Organization::ActiveRecord_Relation:0x007ff324133750>):
+  
+app/controllers/organizations_controller.rb:35:in `show'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (102.6ms)
+Started GET "/organizations/%23%3COrganization::ActiveRecord_Relation:0x007ff324133750%3E" for ::1 at 2017-04-06 20:08:23 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"#<Organization::ActiveRecord_Relation:0x007ff324133750>"}
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Organization with 'id'=#<Organization::ActiveRecord_Relation:0x007ff324133750>):
+  
+app/controllers/organizations_controller.rb:35:in `show'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (69.1ms)
+Started GET "/" for ::1 at 2017-04-06 20:08:29 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (9.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (31.6ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 9.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `select_all' for #<Organization::ActiveRecord_Relation:0x007ff31dbcfbe8>
+Did you mean?  delete_all):
+    4: 
+    5: <%= link_to 'View all Organizations', organizations_path %>
+    6: 
+    7: <%= link_to 'Education Organizations', organization_path(@organizations.select_all { |org| org.category == 'Education'}) %>
+    8: 
+    9: <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
+   10: 
+  
+app/views/organizations/home.html.erb:7:in `_app_views_organizations_home_html_erb___463220682589889607_70341076349860'
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.1ms)
+Started GET "/organizations/new" for ::1 at 2017-04-06 20:08:37 -0500
+Processing by OrganizationsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/new.html.erb within layouts/application
+  Rendered organizations/_form.html.erb (9.0ms)
+  Rendered organizations/new.html.erb within layouts/application (17.3ms)
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 87ms (Views: 77.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:08:39 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (19.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (24.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 67ms (Views: 44.7ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:08:43 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.7ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (11.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 61ms (Views: 39.5ms | ActiveRecord: 13.5ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:08:48 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 62ms (Views: 56.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:09:22 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (8.1ms)
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 83ms (Views: 76.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:09:23 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.2ms)
+Completed 200 OK in 59ms (Views: 49.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:09:54 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (25.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.0ms)
+Completed 200 OK in 128ms (Views: 112.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:10:15 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (1.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (11.5ms)
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 135ms (Views: 123.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:11:28 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (2.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 58ms (Views: 51.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:11:30 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 89ms (Views: 67.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:11:48 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (9.0ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 68ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:11:55 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (4.8ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (9.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 48ms (Views: 39.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:11:56 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.6ms)
+Completed 200 OK in 61ms (Views: 54.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:12:53 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 77ms (Views: 73.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:12:55 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 56.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:13:29 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (2.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (20.0ms)
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 103ms (Views: 89.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/organizations/13" for ::1 at 2017-04-06 20:13:32 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mOrganization Load (2.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (13.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 13]]
+  Rendered organizations/show.html.erb within layouts/application (16.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 144ms (Views: 118.9ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/organizations/3" for ::1 at 2017-04-06 20:13:58 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (5.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  Rendered organizations/show.html.erb within layouts/application (16.2ms)
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 82ms (Views: 63.3ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:24:16 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.5ms)
+Started GET "/organizations" for ::1 at 2017-04-06 20:24:19 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.0ms)
+Started GET "/organizations" for ::1 at 2017-04-06 20:24:22 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.2ms)
+Started GET "/organizations" for ::1 at 2017-04-06 20:24:41 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.8ms)
+Started GET "/" for ::1 at 2017-04-06 20:24:45 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.1ms)
+Started GET "/" for ::1 at 2017-04-06 20:26:07 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.2ms)
+Started GET "/" for ::1 at 2017-04-06 20:26:51 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.0ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (104.4ms)
+Started GET "/organizations" for ::1 at 2017-04-06 20:26:57 -0500
+  
+SyntaxError (/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+/Users/Michael/Desktop/finder/finder/app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/organizations_controller.rb:74: unterminated regexp meets end of file
+app/controllers/organizations_controller.rb:74: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.3ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.7ms)
+  Rendering /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/Michael/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (89.2ms)
+Started GET "/organizations" for ::1 at 2017-04-06 20:27:06 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (3.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (76.0ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 172ms (Views: 120.1ms | ActiveRecord: 35.5ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:27:11 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (19.7ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (24.9ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 74ms (Views: 51.0ms | ActiveRecord: 20.7ms)
+
+
+Started GET "/organizations/7" for ::1 at 2017-04-06 20:27:18 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 7]]
+  Rendered organizations/show.html.erb within layouts/application (4.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.1ms)
+Completed 200 OK in 68ms (Views: 41.4ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:27:21 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (5.2ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (10.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 82ms (Views: 73.6ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:27:23 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 71ms (Views: 57.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews/new" for ::1 at 2017-04-06 20:27:42 -0500
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" ORDER BY "organizations"."name" ASC[0m
+  Rendered reviews/_form.html.erb (10.8ms)
+  Rendered reviews/new.html.erb within layouts/application (16.2ms)
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 86ms (Views: 48.6ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:27:59 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 50ms (Views: 46.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:28:02 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (4.7ms)
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.3ms)
+Completed 200 OK in 61ms (Views: 55.1ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/organizations/11%2F12%2F16" for ::1 at 2017-04-06 20:28:04 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"11/12/16"}
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 11]]
+  Rendered organizations/show.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (8.2ms)
+Completed 200 OK in 73ms (Views: 67.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organizations/18" for ::1 at 2017-04-06 20:28:07 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 18]]
+  Rendered organizations/show.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 60ms (Views: 51.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/20" for ::1 at 2017-04-06 20:28:18 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 20]]
+  Rendered organizations/show.html.erb within layouts/application (3.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 64ms (Views: 58.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:28:30 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (36.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (40.9ms)
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 99ms (Views: 56.8ms | ActiveRecord: 39.1ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:28:31 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 71ms (Views: 52.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/organizations/5" for ::1 at 2017-04-06 20:28:34 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (15.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 5]]
+  Rendered organizations/show.html.erb within layouts/application (18.3ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (4.2ms)
+Completed 200 OK in 73ms (Views: 45.1ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:28:39 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (7.4ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 56ms (Views: 51.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:28:43 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (10.0ms)
+  Rendered layouts/_menu.html.erb (1.5ms)
+Completed 200 OK in 54ms (Views: 48.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/organizations/4" for ::1 at 2017-04-06 20:28:49 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (7.9ms)
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.5ms)
+Completed 200 OK in 67ms (Views: 57.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/organizations/4%2F5" for ::1 at 2017-04-06 20:30:04 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"4/5"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (57.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 4]]
+  Rendered organizations/show.html.erb within layouts/application (64.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 120ms (Views: 57.0ms | ActiveRecord: 58.2ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:30:20 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (7.2ms)
+  [1m[36mUser Load (20.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 116ms (Views: 92.9ms | ActiveRecord: 20.9ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:31:56 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (4.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_menu.html.erb (0.9ms)
+Completed 200 OK in 109ms (Views: 94.3ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/organizations/5" for ::1 at 2017-04-06 20:32:01 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mOrganization Load (1.0ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (24.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 5]]
+  Rendered organizations/show.html.erb within layouts/application (28.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.8ms)
+Completed 200 OK in 78ms (Views: 44.2ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:32:09 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (18.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.9ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (27.8ms)
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 71ms (Views: 48.3ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/organizations" for ::1 at 2017-04-06 20:32:10 -0500
+Processing by OrganizationsController#index as HTML
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:32:13 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.4ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (6.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.0ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/organizations/7" for ::1 at 2017-04-06 20:32:14 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 7]]
+  Rendered organizations/show.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (0.8ms)
+Completed 200 OK in 62ms (Views: 51.9ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:32:17 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.3ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (7.1ms)
+  Rendered layouts/_menu.html.erb (0.7ms)
+Completed 200 OK in 77ms (Views: 61.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2017-04-06 20:32:20 -0500
+Processing by OrganizationsController#home as HTML
+  Rendering organizations/home.html.erb within layouts/application
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/home.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (13.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.1ms)
+Completed 200 OK in 49ms (Views: 33.0ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/organizations/8" for ::1 at 2017-04-06 20:32:24 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 8]]
+  Rendered organizations/show.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.6ms)
+Completed 200 OK in 63ms (Views: 57.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/organizations/9" for ::1 at 2017-04-06 20:32:31 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mOrganization Load (3.1ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 9]]
+  Rendered organizations/show.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (1.2ms)
+Completed 200 OK in 66ms (Views: 55.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/organizations.4%2F5" for ::1 at 2017-04-06 20:33:07 -0500
+Processing by OrganizationsController#index as 
+  Rendering organizations/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mOrganization Load (0.5ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  Rendered organizations/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_menu.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/organizations/3" for ::1 at 2017-04-06 20:33:09 -0500
+Processing by OrganizationsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrganization Load (0.2ms)[0m  [1m[34mSELECT  "organizations".* FROM "organizations" WHERE "organizations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering organizations/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  Rendered organizations/show.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_menu.html.erb (2.3ms)
+Completed 200 OK in 50ms (Views: 44.1ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mOrganization Load (0.6ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations"[0m
+  [1m[36mOrganization Load (12.1ms)[0m  [1m[34mSELECT "organizations".* FROM "organizations" WHERE "organizations"."name" = $1[0m  [["name", "XX"]]
+  [1m[36mReview Load (12.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "reviews"."rating" FROM "reviews" WHERE "reviews"."organization_id" = $1[0m  [["organization_id", 3]]

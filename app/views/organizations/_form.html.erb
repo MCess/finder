@@ -36,6 +36,9 @@ prohibited
     <%= label_tag(:persian, "Persian Gulf") %>
     <%= f.radio_button :era_served, "GWOT" %>
     <%= label_tag(:gwot, "GWOT") %>
+
+    <%= f.radio_button :era_served, "All Eras" %>
+    <%= label_tag(:all_eras, "All Eras") %>
     <br>
   </div>
 
@@ -62,7 +65,7 @@ prohibited
     <%= label_tag(:employment, "Employment") %>
     <%= f.radio_button :category, "Mentoring" %>
     <%= label_tag(:mentoring, "Mentoring") %>
-    <%= f.radio_button :category, "HealthCare" %>
+    <%= f.radio_button :category, "Health Care" %>
     <%= label_tag(:health_care, "Health Care") %>
   </div>
 

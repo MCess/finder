@@ -18,7 +18,12 @@
 <p class="show-header">
   <strong>Rating</strong></br>
   <%= @organization.avg_rating %>
+
+  avg_rating = review.rating.sum /review.rating.length
 </p>
+
+Review.where(organization_id: 3).pluck("rating").sum / Review.where(organization_id: 3).pluck("rating").length
+
 
 <p>
   <strong>Website</strong></br>
