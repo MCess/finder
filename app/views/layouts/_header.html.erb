@@ -1,1 +1,33 @@
-_header.html.erb
+<nav class="navbar navbar-standard navbar-static-top menu">
+ <div class="container-fluid">
+   <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       <span class="sr-only">Toggle navigation</span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+     </button>
+     <a class="navbar-brand" href="/" style="color:white">VetFinder</a>
+   </div>
+
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class="nav navbar-nav">
+       <li><%= link_to("View All Organizations", organizations_path)  %> <span class="sr-only">(current)</span></a></li>
+       <li><%= link_to 'Review an Organization', new_review_path %> <span class="sr-only">(current)</span></a></li>
+     </ul>
+     <ul class="nav navbar-nav navbar-right">
+       <li>
+          <% if current_user %>
+            <%= button_to "Logout", destroy_user_session_path, :method => "delete" %>
+          <% else %>
+
+          <%= link_to 'Join our community', new_user_registration_path %></li>
+          <li>
+          <%= link_to 'Login', new_user_session_path %>
+          </li>
+          <% end %>
+        </li>
+     </ul>
+   </div>
+ </div>

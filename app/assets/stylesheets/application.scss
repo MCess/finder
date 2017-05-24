@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+body {
+ padding-left: 50px;
+ padding-right: 50px;
+ background-color: #B3DDF2 ;
+}
+
+.banner {
+    color: #091b5e ;
+    background-color: white;
+    border-width: 10px;
+    border-color: #091b5e;
+    border-style: solid;
+}
+
+.button {
+    padding: 15px;
+    color: white ;
+    background-color: #091b5e;
+    border-width: 4px;
+    border-color: #091b5e;
+    border-style: solid;
+}
+
+.button:hover {
+   background-color: white ;
+   color: #091b5e;
+   border-color: #091b5e ;
+}
+
+.menu {
+    background-color: #091b5e;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border-width: 4px;
+    border-color: #091b5e;
+    border-style: solid;
+}
+
+
+.navbutton {
+    padding: 10px;
+    color: #091b5e ;
+    background-color: #091b5e;
+}
+
+.navbutton:hover {
+   background-color: #091b5e ;
+   color: #B3DDF2;
+}
+
+.hidden{
+  display: none;
+}

@@ -7,13 +7,9 @@ class OrganizationsController < ApplicationController
 
    def index
      @organizations = Organization.all
-    end
+   end
 
-  #   def admin
-  #     if current_user.admin
-  #       @all_posts = Post.all
-  #     end
-  #   end
+
 
     def new
        @organizations = Organization.new
@@ -36,29 +32,6 @@ class OrganizationsController < ApplicationController
       @reviews = @organization.reviews
     end
 
-  #   def edit
-  #     @post = Post.find(params[:id])
-  #   end
-
-  #   def update
-  #     @post= Post.find(params[:id])
-  #     if @post.update(post_params)
-  #       redirect_to @post
-  #     else
-  #       render 'edit'
-  #     end
-  #   end
-
-  #   def destroy
-  #     @post = Post.find(params[:id])
-  #     if @post.destroy
-  #       flash[:notice] = "Successfully deleted post!"
-  #       redirect_to posts_path
-  #     else
-  #       flash[:alert] = "Errors deleting post!"
-  #       render 'destroy'
-  #     end
-  #   end
 
     private
     
@@ -69,8 +42,6 @@ class OrganizationsController < ApplicationController
     def find_org
       @organizations = Organization.find_by_id(params[:id])
     end
-
-
   
 
 end

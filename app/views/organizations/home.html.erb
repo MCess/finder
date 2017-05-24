@@ -1,37 +1,23 @@
-<h1> Welcome to Chicago's Veteran Resources </h1>
+<div class="jumbotron banner">
+ <h1>Welcome to VetFinder!</h1>
+ <h2>Discover and review services for the veteran community!</h2>
+ <p><a class="btn btn-primary btn-md button" <%= link_to 'View All Organizations', organizations_path(@organizations.select { |org| org.category == 'Education'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %> </a> </p>
+ <a class="btn btn-primary btn-md button" <%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %> </a> 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %> </a> 
+ 
+ <a class="btn btn-primary btn-md button" <%= link_to 'Employment', organization_path(@organizations.select { |org| org.category == 'Employment'})  %> </a> </p>
 
-<h3> Discover and review services for the veteran community!</h3>
-
-<%= link_to 'Education Organizations', organizations_path(@organizations.select { |org| org.category == 'Education'}) %>
-
-<%= link_to 'Legal Aid', organization_path(@organizations.select { |org| org.category == 'Legal Aid'}) %>
-
-<%= link_to 'Fitness', organization_path(@organizations.select { |org| org.category == 'Fitness'}) %>
-
-<%= link_to 'Housing', organization_path(@organizations.select { |org| org.category == 'Housing'}) %>
-
-<%= link_to 'Family Support', organization_path(@organizations.select { |org| org.category == 'Family Support'}) %>
-
-<%= link_to 'Mental Health', organization_path(@organizations.select { |org| org.category == 'Mental Health'}) %>
-
-<%= link_to 'Health Care', organization_path(@organizations.select { |org| org.category == 'Health Care'}) %>
-
-<%= link_to 'Disability Benefits', organization_path(@organizations.select { |org| org.category == 'Disability Benefits'}) %>
-
-<%= link_to 'Mentoring', organization_path(@organizations.select { |org| org.category == 'Mentoring'}) %>
-
-<%= link_to 'Employment', organization_path(@organizations.select { |org| org.category == 'Employment'}) %>
+</div>
 
 
 
 
 
 
-
-
-
-
-
-
-
-<%= link_to '5 Star Ratings', organization_path(@organizations.select { |org| org.category == 'Education'}) %>
+<%# link_to '5 Star Ratings', organization_path(@organizations.select { |org| org.category == 'Education'}) %>

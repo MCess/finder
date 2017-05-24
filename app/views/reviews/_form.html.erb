@@ -1,11 +1,11 @@
 <%= form_for :review, url: reviews_path do |f| %>
   <% if @reviews.errors.any? %>
       <div id="error_explanation">
-      <h2>
+      <h4>
         <%= pluralize(@reviews.errors.count, "error") %>
 prohibited
         this post from being saved:
-      </h2>
+      </h4>
       <ul>
         <% @reviews.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -14,31 +14,30 @@ prohibited
     </div>
   <% end %>
 <h1> Create a new Review </h1>
+<br />
 
-<h2>Choose the Organization you Want to Review</h2>
+<h4>Choose the Organization you Want to Review</h4>
   <%= f.collection_select :organization_id, Organization.all.order(:name),:id,:name %>
 <br>
 
+    <h4>Overall how would rate working with them [0 - 5]?</h4>
+    <div style="max-width: 300px">
+    <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%> 
+    <%= f.label "0" %> <%= f.label "5", :style=>"float:right" %>
 </div>
-<h2>Overall how would rate working with them [0 - 5]?</h2>
-    <%= f.label "0" %>
-    <%= f.range_field :rating, :min=>0, :max=>5, :class=>"slide", :id=>"slider1"%>
-    <%= f.label "5" %>
 
 <div class="field">
-  <h3>How did is organization help or hinder you?</h3>
+  <h4>How did this organization help or hinder you?</h4>
     <%= f.label :feedback, class: "hidden" %>
     <%= f.text_area :feedback, style: 'width:60%;', :placeholder => "This is where you write about the organization" %>
  </div>
 
- <h3>Would you Recommend this Organization to other Veterans?</h3>
- <div class="radio-group">
-   <%= f.radio_button :recommend, "Yes I Would" %>
-   <%= label_tag(:yes, "Yes I Would") %>
-   <%= f.radio_button :recommend, "No I Would Not" %>
-   <%= label_tag(:no, "No I Would Not") %>
-</div>
+ <h4>Would you recommend this Organization to other Veterans?</h4>
+  <div class="field">
+    <%= f.label "Yes!" %>
+    <%= f.check_box :recommend %>
+  </div>
   
   <br>
-  <%= f.submit "submit", class: "btn btn-primary" %>
+  <%= f.submit "submit", class: "btn btn-primary btn-primary button" %>
 <% end %>

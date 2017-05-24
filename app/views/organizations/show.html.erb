@@ -1,47 +1,40 @@
-<h2><%= @organization.name %></h2>
+<div class="panel panel-default">
+ <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-10"><h2><%= @organization.name %></h2></div>
+      <div class="col-md-2"><a class="btn btn-primary btn-md button" style="float:right"> Donate </a></div>
+    </div>
+  </div>
+<div class="panel-body">
+<p><strong>Service Type</strong></br>
+  <%= @organization.category %></p>
 
-<p>
-  <strong>Service Type</strong></br>
-  <%= @organization.category %>
-</p>
+<p><strong>Eras We Serve</strong></br>
+  <%= @organization.era_served %></p>
 
-<p>
-  <strong>Eras We Serve</strong></br>
-  <%= @organization.era_served %>
-</p>
+<p><strong>Mission Statement</strong></br>
+  <%= @organization.description %></p>
 
-<p>
-  <strong>Mission Statement</strong></br>
-  <%= @organization.description %>
-</p>
+<p><strong>Rating</strong></br>
+  <%= @reviews.average(:rating).round(1) %></p>
 
-<p class="show-header">
-  <strong>Rating</strong></br>
-  <%= @organization.avg_rating %>
+<!-- avg_rating = review.rating.map.inject { |sum, el| sum + el }.to_f / rating.size -->
 
-  avg_rating = review.rating.sum /review.rating.length
-</p>
+<!-- review.rating.map.inject{ |sum, el| sum + el }.to_f / rating.size -->
 
-Review.where(organization_id: 3).pluck("rating").sum / Review.where(organization_id: 3).pluck("rating").length
+<!-- Review.where(organization_id: 3).pluck("rating").sum / Review.where(organization_id: 3).pluck("rating").length
+ -->
 
+<p><strong>Website</strong></br>
+  <%= @organization.url %></p>
 
-<p>
-  <strong>Website</strong></br>
-  <%= @organization.url %>
-</p>
+<p><strong>Contact</strong></br>
+  <%= @organization.email %></p>
 
-<p>
-  <strong>Contact</strong></br>
-  <%= @organization.email %>
-</p>
+<p><strong>Phone</strong></br>
+  <%= @organization.phone %></p>
 
-<p>
-  <strong>phone</strong></br>
-  <%= @organization.phone %>
-</p>
-
-<p>
-  <strong>Address</strong></br>
+<p><strong>Address</strong></br>
   <%= @organization.address1 %>
   <%= @organization.address2 %></br>
   <%= @organization.city %>,</br>
@@ -49,16 +42,48 @@ Review.where(organization_id: 3).pluck("rating").sum / Review.where(organization
   <%= @organization.zipcode %></br>
 </p>
 
-  <h2> All Reviews </h2>
-  <table class="listing" summary="Post list">
-    <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.rating %></td>
-        <td><%= review.feedback %></td>
-        <td><%= review.recommend %></td>
-        
-        </td>
-        <% end %>
-      </tr>
-  </table>
+<iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBWW_YRm0VUBmQb9P4u4kTMttizucOS-Jw&q=<%=@organization.latitude%>, <%=@organization.longitude%>&zoom=18” allowfullscreen>
+    "
 </div>
+</iframe>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+
+  <div class="row">
+  <div class="col-md-10"><h2> Reviews for <%= @organization.name %> </h2></div>
+  <div class="col-md-2">
+  <a class="btn btn-primary btn-md button" style="float:right"<%= link_to 'Review this Organization', new_review_path %> </div>
+  </div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+    <div class="col-md-3"><strong>Rating (1 low - 5 highest!)</strong></div>
+    <div class="col-md-4"><strong>What are your thoughts?</strong></div>
+    <div class="col-md-5"><strong>Would you recommend this organization to other vets?</strong></div>
+    </div>
+    <hr>
+    <% @reviews.each do |review| %>
+    <div class="row">
+        <div class="col-md-3"><h4><%= review.rating %></h4></div>
+        <div class="col-md-4"><%= review.feedback %></div>
+        <div class="col-md-5">
+        <% if review.recommend  == true %>
+        <%= "Yes I recommend this organization!" %>
+        <% else %>
+        <%= "No I do not recommend this organization." %>
+        <% end %>
+        </div>
+   
+      </div>
+      <hr>
+      <% end %>
+  </div>
+
+
+<!-- <a style="float:right"  <%# link_to 'Delete Organization', organization_path(@organization), method: :destroy %> </a> -->

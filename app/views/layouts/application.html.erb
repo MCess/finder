@@ -9,17 +9,17 @@
   </head>
 
   <body>
+  <div class="container-fluid">
       <nav>
         <% if current_user %>
         <%= render "layouts/menu" %>
-      
           <% else %>
-          <%= link_to 'Join our community', new_user_registration_path %>
-          <%= link_to 'Login', new_user_session_path %> 
+       <%= render "layouts/header" %>
           <% end %>
       </nav>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>
